@@ -5,27 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
   
   <title>Frontend Mentor | Fylo data storage component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+
+    }
+    body{
+      background: url(images/bg-mobile.png);
+      font-family: 'Raleway';
+    }
+    header{
+      background-color: hsl(228, 56%, 26%);
+       border-radius: 2px 150px 8px 8px;
+       max-width: 400px;
+       width: 100%;
+       margin: 40px auto;
+       padding: 60px 20px;
+       
+           }
+    header #logo{
+       width: 230px;
+     
+       margin-left: 20px;
+       padding: 20px;
+       margin-bottom: 20px;
+      }
+
+      .folder img{
+        padding: 14px;
+        background-color: hsl(229, 57%, 11%);
+        width: 50px;
+      height: 50px;
+        margin: 8px;
+        border-radius: 12px;
+      }
+      .folder{
+        margin-left: 20px;
+      }
+
+      .container{
+        border: 2px solid red;
+        max-width: 400px;
+        width: 100%;
+        margin: 40px auto;
+        color: white;
+        background-color: hsl(228, 56%, 26%);
+        padding: 44px;
+
+      }
+      .container .para{
+        text-align: center;
+        color: hsl(243, 100%, 93%);
+      }
+      .container .para span{
+        color: #fff;
+        font-weight: 700;
+      }
+      .container .line{
+        width: 300px;
+        height: 16px;
+        background: linear-gradient(hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+        border-radius: 18px;
+      }
+    </style>
 </head>
 <body>
-
-  You’ve used 815 GB of your storage
-
-  185 GB Left
+<header>
+  <img src="images/logo.svg" alt="picture of logo" id="logo">
+  <div class="folder">
+    <img src="images/icon-document.svg" alt="picture of document">
+    <img src="images/icon-folder.svg" alt="picture of folder">
+    <img src="images/icon-upload.svg" alt="picture of upload">
+  </div>
+</header>
+<div class="container">
+  <p class="para">You’ve used <span>815 GB</span> of your storage</p>
+  <div class="line">
+  </div>
+<p class="content">
+  <span>185</span> GB Left
+</p>
+<div class="number">
+  <p>0 GB</p>
+  <p>1000 GB</p>
+  </div>
+  </div>
   
-  0 GB
-  1000 GB
-  
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </footer>
 </body>
 </html>
