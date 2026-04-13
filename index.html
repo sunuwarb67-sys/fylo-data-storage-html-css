@@ -25,15 +25,16 @@
     body{
       background: url(images/bg-mobile.png);
       font-family: 'Raleway';
+      
     }
     header{
       background-color: hsl(228, 56%, 26%);
-       border-radius: 2px 150px 8px 8px;
+       border-radius: 8px 150px 8px 8px;
        max-width: 400px;
        width: 100%;
        margin: 40px auto;
        padding: 60px 20px;
-       
+       margin-top: 150px;
            }
     header #logo{
        width: 230px;
@@ -56,32 +57,109 @@
       }
 
       .container{
-        border: 2px solid red;
+        border-radius: 16px;
         max-width: 400px;
         width: 100%;
         margin: 40px auto;
         color: white;
         background-color: hsl(228, 56%, 26%);
         padding: 44px;
-
+        position: relative;
       }
       .container .para{
         text-align: center;
         color: hsl(243, 100%, 93%);
+        margin: 12px;
+        padding: 12px;
       }
       .container .para span{
         color: #fff;
         font-weight: 700;
       }
       .container .line{
-        width: 300px;
+        max-width: 300px;
+        width: 100%;
         height: 16px;
-        background: linear-gradient(hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+        background: hsl(229, 57%, 11%);
+         margin: 12px; 
         border-radius: 18px;
+      }
+      .line .progress {
+        width: 70%;
+        height: 16px;
+        background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+        border-radius: 18px;
+        position: relative;
+      }
+      .line .progress::after {
+        content: '';
+        position: absolute;
+        right: 2px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 12px;
+        height: 12px;
+        background: #fff;
+        border-radius: 50%;
+      }
+      .content{
+        width: 220px;
+        height: 80px;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        color: hsl(229, 7%, 55%);
+        background: #fff;
+        border-radius: 12px;
+        position: absolute;
+        bottom: -40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .content span{
+        color: black;
+        font-weight: 700;
+        font-size: 3rem;
+        padding: 8px;
+      }
+      .number{
+        display: flex;
+        justify-content: space-between;
+        padding: 6px;
+      }
+      
+
+      @media (min-width: 768px) {
+        body, header, .container{
+          margin: 0;
+        }
+        .wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 100vh;
+          gap: 50px;
+        }
+       .content{
+        top: 0;
+        left: 90%;
+       }
+       .container{
+        max-width: 700px;
+        width: 100%;
+       }
+       .container .line{
+        width: 100%;
+       
+        max-width: 600px;
+       }
       }
     </style>
 </head>
 <body>
+  <div class="wrapper">
 <header>
   <img src="images/logo.svg" alt="picture of logo" id="logo">
   <div class="folder">
@@ -92,7 +170,9 @@
 </header>
 <div class="container">
   <p class="para">You’ve used <span>815 GB</span> of your storage</p>
+  
   <div class="line">
+  <div class="progress"></div>
   </div>
 <p class="content">
   <span>185</span> GB Left
@@ -102,6 +182,6 @@
   <p>1000 GB</p>
   </div>
   </div>
-  
+  </div>
 </body>
 </html>
